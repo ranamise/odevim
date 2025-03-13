@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+
+class Araba
+{
+    public string Marka;
+    public double BenzinTuketimi;
+}
+
+class Program
+{
+    static void Main()
+    {
+        List<Araba> arabalar = new List<Araba>
+        {
+            new Araba { Marka = "Ford", BenzinTuketimi = 8.5 },
+            new Araba { Marka = "Toyota", BenzinTuketimi = 6.2 },
+            new Araba { Marka = "BMW", BenzinTuketimi = 10.3 }
+        };
+
+        double toplamTuketim = 0;
+        foreach (var araba in arabalar)
+        {
+            toplamTuketim += araba.BenzinTuketimi;
+            Console.WriteLine($"{araba.Marka} - Benzin Tüketimi: {araba.BenzinTuketimi} L/100km");
+        }
+
+        Console.WriteLine($"Toplam Benzin Tüketimi: {toplamTuketim} L/100km");
+    }
+}
