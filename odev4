@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+
+class Calisan
+{
+    public string Ad, Soyad, Meslek, Departman;
+    public decimal Maas;
+}
+
+class Program
+{
+    static void Main()
+    {
+        List<Calisan> calisanlar = new List<Calisan>
+        {
+            new Calisan { Ad = "Ahmet", Soyad = "Yılmaz", Meslek = "GM", Maas = 10000, Departman = "Yönetim" },
+            new Calisan { Ad = "Mehmet", Soyad = "Kara", Meslek = "MU", Maas = 7500, Departman = "Pazarlama" },
+            new Calisan { Ad = "Zeynep", Soyad = "Özdemir", Meslek = "PR", Maas = 5000, Departman = "Yazılım" },
+            new Calisan { Ad = "Ali", Soyad = "Demir", Meslek = "S", Maas = 2000, Departman = "Destek" }
+        };
+
+        decimal toplamMaas = 0;
+        foreach (var calisan in calisanlar)
+        {
+            toplamMaas += calisan.Maas;
+            Console.WriteLine($"{calisan.Ad} {calisan.Soyad} - {calisan.Meslek} - {calisan.Maas} TL - {calisan.Departman}");
+        }
+
+        Console.WriteLine($"Toplam Maaş: {toplamMaas} TL");
+    }
+}
