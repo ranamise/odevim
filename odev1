@@ -1,1 +1,16 @@
-mm
+using System;
+
+class Program
+{
+    static string KategoriBelirle(int yas)
+    {
+        if (yas < 0 || yas > 99) return "Ya hiç doğmadınız ya da çoktan öldünüz...";
+        else if (yas <= 18) return "Küçüksünüz";
+        else if (yas <= 35) return "Gençsiniz";
+        else if (yas <= 55) return "Yetişkinsiniz";
+        else if (yas <= 75) return "Yaşlısınız";
+        else return "Çok yaşlısınız";
+    }
+
+    static void Main() => Console.WriteLine(KategoriBelirle(30));
+}
